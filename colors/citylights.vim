@@ -10,7 +10,7 @@
        syntax reset
      endif
   endif
-  let g:colors_name="CityLights"
+  let g:colors_name="citylights"
 
 " Colors {{{
   let s:base00 = ['#1b2b34', '235']
@@ -19,18 +19,19 @@
   let s:base03 = ['#65737e', '243']
   let s:base04 = ['#a7adba', '145']
   let s:base05 = ['#c0c5ce', '251']
-  let s:base06 = ['#cdd3de', '252']
+  let s:base06 = ['#788AA0', '252']
   let s:base07 = ['#d8dee9', '253']
-  let s:red    = ['#ec5f67', '203']
-  let s:orange = ['#f99157', '209']
-  let s:yellow = ['#fac863', '221']
-  let s:green  = ['#99c794', '114']
-  let s:cyan   = ['#62b3b2', '73']
-  let s:blue   = ['#6699cc', '68']
+  let s:red    = ['#EF7068', '203']
+  let s:orange = ['#CE9550', '209']
+  let s:yellow = ['#E2C488', '221']
+  let s:green  = ['#95D49E', '114']
+  let s:cyan   = ['#8BDEE7', '73']
+  let s:blue   = ['#71b0f5', '68']
   let s:purple = ['#c594c5', '176']
   let s:brown  = ['#ab7967', '137']
   let s:white  = ['#ffffff', '15']
   let s:none   = ['NONE',    'NONE']
+  let s:dark_green = ['#3B8893', '260']
 " }}}
 
 call citylights#highlight(
@@ -51,6 +52,7 @@ call citylights#highlight(
   \ s:purple,
   \ s:brown,
   \ s:white,
+  \ s:dark_green,
   \ s:none
   \)
-set background=dark
+" set background=dark

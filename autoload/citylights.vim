@@ -32,7 +32,7 @@ function! s:hi(group, fg, bg, attr, attrsp)
   endif
 endfunction
 
-function! citylights#highlight( base00, base01, base02, base03, base04, base05, base06, base07, red, orange, yellow, green, cyan, blue, purple, brown, white, none) abort
+function! citylights#highlight( base00, base01, base02, base03, base04, base05, base06, base07, red, orange, yellow, green, cyan, blue, purple, brown, white, dark_green, none) abort
 
   call s:hi('Bold',                              '',       '',       s:bold,      '')
   call s:hi('Debug',                             a:red,    '',       '',          '')
@@ -46,8 +46,8 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
 
   call s:hi('Macro',                             a:red,    '',       '',          '')
   call s:hi('MatchParen',                        a:base05, a:base03, '',          '')
-  call s:hi('ModeMsg',                           a:green,  '',       '',          '')
-  call s:hi('MoreMsg',                           a:green,  '',       '',          '')
+  call s:hi('ModeMsg',                           a:blue,  '',       '',          '')
+  call s:hi('MoreMsg',                           a:blue,  '',       '',          '')
   call s:hi('Question',                          a:blue,   '',       '',          '')
   call s:hi('Search',                            a:base03, a:yellow, '',          '')
   call s:hi('SpecialKey',                        a:base03, '',       '',          '')
@@ -61,10 +61,10 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
   call s:hi('Conceal',                           a:blue,   a:base00, '',          '')
   call s:hi('Cursor',                            a:base00, a:base05, '',          '')
   call s:hi('NonText',                           a:base03, '',       '',          '')
-  call s:hi('Normal',                            a:base07, a:base00, '',          '')
-  call s:hi('EndOfBuffer',                       a:base05, a:base00, '',          '')
-  call s:hi('LineNr',                            a:base03, a:base00, '',          '')
-  call s:hi('SignColumn',                        a:base00, a:base00, '',          '')
+  " call s:hi('Normal',                            a:base07, a:base00, '',          '')
+  " call s:hi('EndOfBuffer',                       a:base05, a:base00, '',          '')
+  call s:hi('LineNr',                             a:base01, '',  '',          '')
+  call s:hi('SignColumn',                        '', a:none, '',          '')
   call s:hi('StatusLine',                        a:base01, a:base03, '',          '')
   call s:hi('StatusLineNC',                      a:base03, a:base01, '',          '')
   call s:hi('VertSplit',                         a:base01, a:base00, '',          '')
@@ -79,14 +79,14 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
   call s:hi('PmenuThumb',                        '',       a:base07, '',          '')
   call s:hi('TabLine',                           a:base03, a:base01, '',          '')
   call s:hi('TabLineFill',                       a:base03, a:base01, '',          '')
-  call s:hi('TabLineSel',                        a:green,  a:base01, '',          '')
+  call s:hi('TabLineSel',                        a:blue,  a:base01, '',          '')
   call s:hi('helpExample',                       a:yellow, '',       '',          '')
   call s:hi('helpCommand',                       a:yellow, '',       '',          '')
 
   " Standard syntax highlighting
   call s:hi('Boolean',                           a:orange, '',       '',          '')
   call s:hi('Character',                         a:red,    '',       '',          '')
-  call s:hi('Comment',                           a:base03, '',       s:italic,    '')
+  call s:hi('Comment',                           a:base01, '',       s:italic,    '')
   call s:hi('Conditional',                       a:purple, '',       '',          '')
   call s:hi('Constant',                          a:orange, '',       '',          '')
   call s:hi('Define',                            a:purple, '',       '',          '')
@@ -94,7 +94,8 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
   call s:hi('Float',                             a:orange, '',       '',          '')
   call s:hi('Function',                          a:blue,   '',       '',          '')
 
-  call s:hi('Identifier',                        a:cyan,   '',       '',          '')
+  " call s:hi('Identifier',                        a:yellow,   '',       '',          '')
+  call s:hi('Identifier',                        a:base04,   '',       '',          '')
   call s:hi('Include',                           a:purple, '',       '',          '')
   call s:hi('Keyword',                           a:purple, '',       '',          '')
 
@@ -102,16 +103,16 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
   call s:hi('Number',                            a:orange, '',       '',          '')
   call s:hi('Operator',                          a:orange, '',       '',          '')
   call s:hi('PreProc',                           a:yellow, '',       '',          '')
-  call s:hi('Repeat',                            a:yellow, '',       '',          '')
+  call s:hi('Repeat',                            a:blue, '',       '',          '')
   call s:hi('Special',                           a:cyan,   '',       '',          '')
   call s:hi('SpecialChar',                       a:brown,  '',       '',          '')
   call s:hi('Statement',                         a:red,    '',       '',          '')
   call s:hi('StorageClass',                      a:yellow, '',       '',          '')
-  call s:hi('String',                            a:green,  '',       '',          '')
-  call s:hi('Structure',                         a:purple, '',       '',          '')
+  call s:hi('String',                            a:blue,  '',       '',          '')
+  call s:hi('Structure',                         a:cyan, '',       '',          '')
   call s:hi('Tag',                               a:yellow, '',       '',          '')
   call s:hi('Todo',                              a:yellow, a:base01, '',          '')
-  call s:hi('Type',                              a:purple, '',       s:italic,    '')
+  call s:hi('Type',                              a:blue, '',       s:italic,    '')
   call s:hi('Typedef',                           a:purple, '',       s:italic,    '')
 
   call s:hi('SpellBad',                          '',       '',       'undercurl', '')
@@ -133,18 +134,18 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
   call s:hi('cssBraces',                         a:base05, '',       '',          '')
   call s:hi('cssClassName',                      a:purple, '',       '',          '')
 
-  call s:hi('DiffAdd',                           a:green,  a:base01, s:bold,      '')
+  call s:hi('DiffAdd',                           a:blue,  a:base01, s:bold,      '')
   call s:hi('DiffChange',                        a:base03, a:base01, '',          '')
   call s:hi('DiffDelete',                        a:red,    a:base01, '',          '')
   call s:hi('DiffText',                          a:blue,   a:base01, '',          '')
-  call s:hi('DiffAdded',                         a:base07, a:green,  s:bold,      '')
+  call s:hi('DiffAdded',                         a:base07, a:blue,  s:bold,      '')
   call s:hi('DiffFile',                          a:red,    a:base00, '',          '')
-  call s:hi('DiffNewFile',                       a:green,  a:base00, '',          '')
+  call s:hi('DiffNewFile',                       a:blue,  a:base00, '',          '')
   call s:hi('DiffLine',                          a:blue,   a:base00, '',          '')
   call s:hi('DiffRemoved',                       a:base07, a:red,    s:bold,      '')
 
   call s:hi('gitCommitOverflow',                 a:red,    '',       '',          '')
-  call s:hi('gitCommitSummary',                  a:green,  '',       '',          '')
+  call s:hi('gitCommitSummary',                  a:blue,  '',       '',          '')
 
   call s:hi('htmlBold',                          a:yellow, '',       '',          '')
   call s:hi('htmlItalic',                        a:purple, '',       '',          '')
@@ -157,11 +158,11 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
   call s:hi('javaScriptNumber',                  a:orange, '',       '',          '')
   call s:hi('javaScriptBraces',                  a:base05, '',       '',          '')
 
-  call s:hi('jsonKeyword',                       a:green,  '',       '',          '')
-  call s:hi('jsonQuote',                         a:green,  '',       '',          '')
+  call s:hi('jsonKeyword',                       a:blue,  '',       '',          '')
+  call s:hi('jsonQuote',                         a:blue,  '',       '',          '')
 
-  call s:hi('markdownCode',                      a:green,  '',       '',          '')
-  call s:hi('markdownCodeBlock',                 a:green,  '',       '',          '')
+  call s:hi('markdownCode',                      a:blue,  '',       '',          '')
+  call s:hi('markdownCodeBlock',                 a:blue,  '',       '',          '')
   call s:hi('markdownHeadingDelimiter',          a:blue,   '',       '',          '')
   call s:hi('markdownItalic',                    a:purple, '',       s:italic,    '')
   call s:hi('markdownBold',                      a:yellow, '',       s:bold,      '')
@@ -196,11 +197,11 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
   call s:hi('pythonOperator',                    a:purple, '',       '',          '')
 
   call s:hi('rubyConstant',                      a:yellow, '',       '',          '')
-  call s:hi('rubySymbol',                        a:green,  '',       '',          '')
+  call s:hi('rubySymbol',                        a:blue,  '',       '',          '')
   call s:hi('rubyAttribute',                     a:blue,   '',       '',          '')
-  call s:hi('rubyInterpolation',                 a:green,  '',       '',          '')
+  call s:hi('rubyInterpolation',                 a:blue,  '',       '',          '')
   call s:hi('rubyInterpolationDelimiter',        a:brown,  '',       '',          '')
-  call s:hi('rubyStringDelimiter',               a:green,  '',       '',          '')
+  call s:hi('rubyStringDelimiter',               a:blue,  '',       '',          '')
   call s:hi('rubyRegexp',                        a:cyan,   '',       '',          '')
 
   call s:hi('sassidChar',                        a:red,    '',       '',          '')
@@ -214,12 +215,12 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
   call s:hi('vimfilerOpenedFile',                a:blue,   '',       '',          '')
   call s:hi('vimfilerClosedFile',                a:blue,   '',       '',          '')
 
-  call s:hi('GitGutterAdd',                      a:green,  a:base00, s:bold,      '')
+  call s:hi('GitGutterAdd',                      a:blue,  a:base00, s:bold,      '')
   call s:hi('GitGutterChange',                   a:blue,   a:base00, s:bold,      '')
   call s:hi('GitGutterDelete',                   a:red,    a:base00, s:bold,      '')
   call s:hi('GitGutterChangeDelete',             a:purple, a:base00, s:bold,      '')
 
-  call s:hi('SignifySignAdd',                    a:green,  a:base00, s:bold,      '')
+  call s:hi('SignifySignAdd',                    a:blue,  a:base00, s:bold,      '')
   call s:hi('SignifySignChange',                 a:blue,   a:base00, s:bold,      '')
   call s:hi('SignifySignDelete',                 a:red,    a:base00, s:bold,      '')
   call s:hi('SignifySignChangeDelete',           a:purple, a:base00, s:bold,      '')
@@ -277,31 +278,47 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
 
 	if has('nvim')
     " TreeSitter stuff
-    call s:hi('@include',                          a:purple, '',       '',          '')
+    call s:hi('@include',                          a:dark_green, '',       '',          '')
     call s:hi('@punctuation.bracket',              a:cyan,   '',       '',          '')
     call s:hi('@punctuation.delimiter',            a:cyan,   '',       '',          '')
     call s:hi('@punctuation.special',              a:cyan,   '',       '',          '')
     call s:hi('@parameter',                        a:base07, '',       '',          '')
-    call s:hi('@type',                             a:yellow, '',       '',          '')
+    call s:hi('@type',                             a:cyan, '',       '',          '')
     call s:hi('@function',                         a:blue,   '',       '',          '')
 
     call s:hi('@tag.delimiter',                    a:cyan,   '',       '',          '')
     call s:hi('@property',                         a:base07, '',       '',          '')
-    call s:hi('@method',                           a:blue,   '',       '',          '')
+    call s:hi('@method',                           a:cyan,   '',       '',          '')
     call s:hi('@parameter',                        a:yellow, '',       '',          '')
-    call s:hi('@constructor',                      a:base07, '',       '',          '')
+    call s:hi('@constructor',                      a:dark_green, '',       '',          '')
     call s:hi('@variable',                         a:base06, '',       '',          '')
     call s:hi('@operator',                         a:orange, '',       '',          '')
     call s:hi('@tag',                              a:base07, '',       '',          '')
-    call s:hi('@keyword',                          a:purple, '',       '',          '')
-    call s:hi('@keyword.operator',                 a:purple, '',       '',          '')
-    call s:hi('@variable.builtin',                 a:red,    '',       '',          '')
+    call s:hi('@keyword',                          a:dark_green, '',       '',          '')
+    call s:hi('@keyword.operator',                 a:blue, '',       '',          '')
+    call s:hi('@variable.builtin',                 a:orange,    '',       '',          '')
     call s:hi('@label',                            a:cyan,   '',       '',          '')
 
-    call s:hi('@conditional',                      a:purple, '',       '',          '')
+    call s:hi('@conditional',                      a:blue, '',       '',          '')
     call s:hi('@namespace',                        a:base07, '',       '',          '')
-    call s:hi('@symbol',                           a:green,  '',       '',          '')
+    call s:hi('@symbol',                           a:blue,  '',       '',          '')
     call s:hi('@exception',                        a:red,    '',       '',          '')
+
+
+    call s:hi('@lsp.typemod.variable.local.typescript',                          a:base04, '',       '',          '')
+
+    call s:hi('@lsp.mod.local.typescript',                          a:green, '',       '',          '')
+    call s:hi('@type.qualifier.typescript',                          a:blue, '',       '',          '')
+    call s:hi('@lsp.typemod.variable.declaration.typescript',                          a:green, '',       '',          '')
+
+
+
+
+    call s:hi('@lsp.type.class.typescript',                          a:cyan, '',       '',          '')
+    call s:hi('@lsp.type.property.typescript',                          a:base06, '',       '',          '')
+    call s:hi('@lsp.type.variable.typescript',                          a:green, '',       '',          '')
+    call s:hi('@lsp.typemod.parameter.declaration.typescript',                          a:yellow, '',       '',          '')
+    call s:hi('@variable.typescript',                          a:green, '',       '',          '')
   endif
 
 
@@ -330,8 +347,8 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
     let g:terminal_color_7=a:base05[0]
     let g:terminal_color_15=a:base05[0]
 
-    let g:terminal_color_background=a:base00[0]
-    let g:terminal_color_foreground=a:white[0]
+    " let g:terminal_color_background=a:base00[0]
+    " let g:terminal_color_foreground=a:white[0]
   else
     let g:terminal_ansi_colors = [
        \ a:base00[0],
