@@ -1,6 +1,6 @@
 # citylights.nvim
 
-##CityLights inspierd theme for nvim
+## CityLights inspierd theme for nvim
 
 Adjusted for `typescript`
 
