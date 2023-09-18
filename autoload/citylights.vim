@@ -319,6 +319,8 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
     call s:hi('@lsp.type.variable.typescript',                          a:green, '',       '',          '')
     call s:hi('@lsp.typemod.parameter.declaration.typescript',                          a:yellow, '',       '',          '')
     call s:hi('@variable.typescript',                          a:green, '',       '',          '')
+    call s:hi('@lsp.mod.declaration.typescript',                          a:green, '',       '',          '')
+
   endif
 
 
