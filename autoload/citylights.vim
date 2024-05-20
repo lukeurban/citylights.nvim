@@ -313,7 +313,7 @@ function! citylights#highlight( base00, base01, base02, base03, base04, base05, 
 
 
 
-
+    call s:hi('@lsp.type.decorator',                          a:cyan, '',       '',          '')
     call s:hi('@lsp.type.class.typescript',                          a:cyan, '',       '',          '')
     call s:hi('@lsp.type.property.typescript',                          a:base06, '',       '',          '')
     call s:hi('@lsp.type.variable.typescript',                          a:green, '',       '',          '')
